@@ -42,12 +42,16 @@ void swap(int i, int j, vector<int> &v) {
     v[j] = temp;
 }
 
-
+int binpow(int a, int b) {      // a^b
+    if (b==0) return 1;
+    else if (b%2 == 0) return binpow(a,b/2)*binpow(a,b/2);
+    else return a*binpow(a,b-1);
+}
 
 
 int main() {
 
-    cout << gcd(20, 12);
+    cout << binpow(2, 10);
 
     return 0;
 }
